@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100vh;
+  background-color: #F0E8F8;
+}
+
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%; /* 画面幅の70%に設定 */
+  height: auto; /* コンテンツの高さに合わせるため自動調整 */
+  padding: 20px;
+  /* background-color: white; */
+  overflow-y: auto;
+  margin: auto;
+  z-index: 1; /* ナビゲーションバーの上に配置 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+/* 一覧 */
+.showData_body{
+    align-items: center;
+  }
+  
+  .wrapper h2{
+    font-size: 40px;
+    margin-top: 30px;
+  }
+  
+  .wrapper p{
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  
+  .wrapper {
+    text-align: center;
+    margin-top: 80px;
+  }
+  
+  .table_table-bordered {
+    border-collapse: collapse;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    width: 800px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .table_table-bordered th,
+  .table_table-bordered td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    text-align: center;
+    line-height: 2; /* 1行の高さを調整 */
+  }
+  .table_table-bordered th {
+    background-color: #f2f2f2;
+  }
+  .table_table-bordered tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .table_table-bordered tr:hover {
+    background-color: #ddd;
+  }
+  
+  .table_table-bordered tr {
+    margin-bottom: 10px; /* 行ごとの余白を追加 */
+  }
+/* ここまでが一覧 */
+
+
+/* 検索ボックス */
+.search-container {
+  background-color: transparent; /* 背景色を白に設定 */
+  border-radius: 10px; /* 角を丸くする */
+  padding: 20px; /* 内側の余白を追加 */
+  width: 400px; /* 幅を設定 */
+  height: 200px; /* 高さを設定 */
+  position: fixed; /* 固定位置に配置 */
+  justify-content: center; /* 水平方向の中央揃え */
+  align-items: center; /*垂直方向の中央揃え */
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.search-container input[type="text"] {
+  width: 70%; /* 入力フィールドの幅を設定 */
+  padding: 10px; /* 入力フィールドの内側の余白を追加 */
+  border-radius: 5px; /* 入力フィールドの角を丸くする */
+  border: 1px solid #ccc; /* 入力フィールドの境界線を追加 */
+}
+.search-container button {
+  width: 25%; /* ボタンの幅を設定 */
+  padding: 10px; /* ボタンの内側の余白を追加 */
+  border-radius: 5px; /* ボタンの角を丸くする */
+  border: none; /* ボタンの境界線を削除 */
+  background-color: #4CAF50; /* ボタンの背景色を設定 */
+  color: white; /* ボタンのテキスト色を設定 */
+  cursor: pointer; /* カーソルをポインターに変更 */
+}
+.search-container button:hover {
+  background-color: #45a049; /* ボタンの背景色をホバー時に変更 */
+}
+
+/* ここまでが検索ボックス */
+
+
+/* ナビゲーションバーのCSS */
+.navigation {
+  position: relative;
+  /* height: 500px; 最初はこれ*/
+  height: 100vh;
+  /* width: 300px; 最初はこれ*/
+  width: 70px;
+  /* ↓ここで色を変える */
+  background-color: #4d4c86;
+  box-shadow: 10px 0 0 #67cda9;
+  border-left: 10px solid #4d4c86;
+  overflow-x: hidden;
+  transition: all 0.5s;
+}
+
+.navigation:hover {
+  width: 300px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.navigation ul li {
+  list-style: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.navigation ul li:hover {
+  background-color: #20272c5e;
+}
+
+.navigation ul li.active {
+  background-color: #67cda9;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.navigation ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  display: flex;
+}
+
+/* あとで */
+.navigation ul li.active a::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* background-color: red; */
+  top: -30px;
+  right: 0;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 #67cda9;
+}
+.navigation ul li.active a::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* background-color: red; */
+  top: 60px;
+  right: 0;
+  border-radius: 50%;
+  box-shadow: 15px -15px 0 #67cda9;
+}
+
+.navigation ul li a .icon {
+  display: block;
+  min-width: 45px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.5em;
+}
+
+.navigation ul li a .title {
+  padding-left: 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: nowrap;
+}
+/* ここまでがナビゲーションバーのCSS */

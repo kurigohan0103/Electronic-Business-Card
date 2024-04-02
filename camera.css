@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    background-color: #F0E8F8;
+}
+
+.content {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%; /* 画面幅の70%に設定 */
+    height: auto; /* コンテンツの高さに合わせるため自動調整 */
+    padding: 20px;
+    /* background-color: white; */
+    overflow-y: auto;
+    margin: auto;
+    z-index: 1; /* ナビゲーションバーの上に配置 */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 上下方向も中央揃え */
+    height: 100vh; /* 画面の高さいっぱいに広げる */
+}
+
+
+
+
+/* カメラ */
+#msg {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 上下方向も中央揃え */
+    height: 100%; /* 要素の高さを 100% にする */
+}
+
+#canvas {
+    border-radius: 20px; /* 任意の角丸の半径を設定 */
+    overflow: hidden; /* 角丸を適用するために必要 */
+}
+/* ここまでがカメラ */
+
+
+/* Backボタン */
+.button1 {
+    border: none;
+    border-radius: 100px;
+    display: block;
+    width: 150px;
+    padding: 15px;
+    font-size: 25px;
+    box-sizing: border-box;
+    background: #FFF;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0;
+    margin: 0 auto;
+    margin-top: 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* 常時の影を追加 */
+    transition: transform 0.3s, box-shadow 0.3s; /* ボタンを押したときの影にトランジションを追加 */
+}
+
+.button1:active {
+    background-color: #e0e0e0;
+    transform: translateY(2px); /* ボタンをより下に移動 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* ボタンが押されたときの影を追加 */
+}
+/* ここまでBackボタン */
+
+/* ナビゲーションバーのCSS */
+.navigation {
+  position: relative;
+  /* height: 500px; 最初はこれ*/
+  height: 100vh;
+  /* width: 300px; 最初はこれ*/
+  width: 70px;
+  /* ↓ここで色を変える */
+  background-color: #4d4c86;
+  box-shadow: 10px 0 0 #67cda9;
+  border-left: 10px solid #4d4c86;
+  overflow-x: hidden;
+  transition: all 0.5s;
+}
+
+.navigation:hover {
+  width: 300px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.navigation ul li {
+  list-style: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.navigation ul li:hover {
+  background-color: #20272c5e;
+}
+
+.navigation ul li.active {
+  background-color: #67cda9;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.navigation ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  display: flex;
+}
+
+/* あとで */
+.navigation ul li.active a::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* background-color: red; */
+  top: -30px;
+  right: 0;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 #67cda9;
+}
+.navigation ul li.active a::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* background-color: red; */
+  top: 60px;
+  right: 0;
+  border-radius: 50%;
+  box-shadow: 15px -15px 0 #67cda9;
+}
+
+.navigation ul li a .icon {
+  display: block;
+  min-width: 45px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.5em;
+}
+
+.navigation ul li a .title {
+  padding-left: 10px;
+  height: 60px;
+  line-height: 60px;
+  white-space: nowrap;
+}
+/* ここまでがナビゲーションバーのCSS */
