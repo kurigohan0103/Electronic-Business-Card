@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
+    background-color: #F0E8F8;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%; /* 画面幅の70%に設定 */
+    height: auto; /* コンテンツの高さに合わせるため自動調整 */
+    padding: 20px;
+    /* background-color: white; */
+    overflow-y: auto;
+    margin: auto;
+    z-index: 1; /* ナビゲーションバーの上に配置 */
+}
+
+
+/* 名刺部分のCSS */
+.namecard {
+    /*名刺の区切れ目がわかるような線*/
+    /* border: 1px solid #FFF; */
+
+    /*名刺の大きさ（縦横の比率が1.654）*/
+    width: 33.08rem;
+    height: 20.00rem;
+
+    /*名刺の余白*/
+    margin: 2rem;
+    padding: 2.5rem 3.5rem;
+
+    /*装飾*/
+    color: #000000;
+
+    margin: 0 auto;
+    margin-top: 100px;
+
+    position: relative;
+
+    background-color: #fefefe;
+    /* font-family: "Arial", "Helvetica", sans-serif; */
+    /* font-family: "Century Gothic", "Arial", sans-serif; */
+    /* font-family: "Hiragino Mincho ProN", "MS Mincho", serif; */
+    /* font-family: "Century Schoolbook", "Georgia", serif; */
+}
+
+.logo {
+    position: absolute; /* 位置を絶対値にする */
+    top: 10px; /* 上から10pxの位置に配置 */
+    right: 10px; /* 右から10pxの位置に配置 */
+    width: 50px; /* 画像の幅 */
+    height: auto; /* 高さは自動調整 */
+}
+
+
+
+ul.name {
+    padding: 0;
+    margin: 0;
+}
+
+ul.name li {
+    margin: 0; /* マージンを0に設定 */
+}
+
+ul.name li.position {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Century Schoolbook", "Georgia", serif;
+}
+
+ul.name li.kanji_name {
+    margin-top: -5px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: "Century Schoolbook", "Georgia", serif;
+}
+
+ul.name li.romaji_name {
+    margin-top: -5px;
+    font-size: 24px;
+    font-family: "Century Schoolbook", "Georgia", serif;
+}
+
+
+.affiliation{
+    margin-top: 18px;
+    font-size: 24px;
+    font-family: "Century Schoolbook", "Georgia", serif;
+}
+
+.company_address {
+    font-size: 18px;
+    font-family: "Century Schoolbook", "Georgia", serif;
+}
+
+.contact {
+    margin-top: 10px;
+
+}
+
+.phone_number, .email_address {
+    font-size: 16px;
+    margin-bottom: 3px;
+    font-family: "Century Schoolbook", "Georgia", serif;
+}
+
+.contact p ion-icon {
+    vertical-align: middle; /* アイコンを垂直方向に中央揃え */
+    margin-bottom: 4px; /* アイコンを少し下に移動 */
+}
+
+/* ここまでが名刺のCSS */
+
+/* Backボタン */
+.button2 {
+    border: none;
+    border-radius: 100px;
+    display: block;
+    width: 150px;
+    padding: 15px;
+    font-size: 25px;
+    box-sizing: border-box;
+    background: #FFF;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* 常時の影を追加 */
+    transition: transform 0.3s, box-shadow 0.3s; /* ボタンを押したときの影にトランジションを追加 */
+}
+
+.button2:active {
+    background-color: #e0e0e0;
+    transform: translateY(2px); /* ボタンをより下に移動 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* ボタンが押されたときの影を追加 */
+}
+/* ここまでBackボタン */
+
+
+/* ナビゲーションバーのCSS */
+.navigation {
+    position: relative;
+    /* height: 500px; 最初はこれ*/
+    height: 100vh;
+    /* width: 300px; 最初はこれ*/
+    width: 70px;
+    /* ↓ここで色を変える */
+    background-color: #4d4c86;
+    box-shadow: 10px 0 0 #67cda9;
+    border-left: 10px solid #4d4c86;
+    overflow-x: hidden;
+    transition: all 0.5s;
+  }
+  
+  .navigation:hover {
+    width: 300px;
+  }
+  
+  .navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 10px;
+  }
+  
+  .navigation ul li {
+    list-style: none;
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+  }
+  
+  .navigation ul li:hover {
+    background-color: #20272c5e;
+  }
+  
+  .navigation ul li.active {
+    background-color: #67cda9;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  
+  .navigation ul li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    display: flex;
+  }
+  
+  /* あとで */
+  .navigation ul li.active a::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    /* background-color: red; */
+    top: -30px;
+    right: 0;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 #67cda9;
+  }
+  .navigation ul li.active a::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    /* background-color: red; */
+    top: 60px;
+    right: 0;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 #67cda9;
+  }
+  
+  .navigation ul li a .icon {
+    display: block;
+    min-width: 45px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+  }
+  
+  .navigation ul li a .icon ion-icon {
+    font-size: 1.5em;
+  }
+  
+  .navigation ul li a .title {
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+  }
+  /* ここまでがナビゲーションバーのCSS */
